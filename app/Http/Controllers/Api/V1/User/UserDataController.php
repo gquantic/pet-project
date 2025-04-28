@@ -14,6 +14,6 @@ class UserDataController extends Controller
         UserDataService $userDataService,
     )
     {
-        UserResource::make($userDataService->getUserData());
+        return UserResource::make($userDataService->getUserData());
     }
 }

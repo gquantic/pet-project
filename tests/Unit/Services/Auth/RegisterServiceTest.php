@@ -4,7 +4,7 @@ namespace Tests\Unit\Services\Auth;
 
 use App\Actions\Auth\UserCreateAction;
 use App\DTOs\Auth\RegisterDTO;
-use App\Models\User\User;
+use App\Models\User;
 use App\Services\Auth\RegisterService;
 use Illuminate\Support\Facades\Hash;
 use Mockery;

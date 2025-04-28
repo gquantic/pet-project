@@ -2,7 +2,7 @@
 
 namespace App\Actions\Auth;
 
-use App\Models\User\User;
+use App\Models\User;
 use App\Repositories\UserRepository;
 
 class UserCreateAction
@@ -13,6 +13,8 @@ class UserCreateAction
 
     public function execute(array $data): User
     {
-        return $this->userRepository->create($data);
+        $user = $this->userRepository->create($data);
+
+        return $user;
     }
 }

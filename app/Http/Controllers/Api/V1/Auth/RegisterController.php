@@ -6,9 +6,7 @@ use App\DTOs\Auth\RegisterDTO;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\User\UserStoreRequest;
 use App\Http\Resources\Auth\UserResource;
-use App\Models\User\User;
 use App\Services\Auth\RegisterService;
-use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {

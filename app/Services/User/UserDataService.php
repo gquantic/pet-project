@@ -2,13 +2,14 @@
 
 namespace App\Services\User;
 
-use App\Models\User\User;
 use Illuminate\Support\Facades\Auth;
 
 class UserDataService
 {
-    public function getUserData(): \App\Models\User\User|\Illuminate\Contracts\Auth\Authenticatable
+    public function getUserData(): \App\Models\User
     {
-        return Auth::user();
+        return Auth::user()
+            ->with('createdBy')
+            ->first();
     }
 }

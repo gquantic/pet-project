@@ -2,32 +2,23 @@
 
 namespace App\Actions\Auth;
 
-use App\Exceptions\IncorrectUserEmailOrPasswordException;
 use App\Exceptions\InvalidCredentialsException;
-use App\Models\User\User;
 use App\Repositories\UserRepository;
-use Illuminate\Support\Facades\Hash;
-use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Auth;
 
 class UserLoginAction
 {
-    public function __construct(
-        private UserRepository $userRepository
-    )
-    {
-    }
-
     /**
      * @throws InvalidCredentialsException
      */
     public function execute(array $data): ?string
     {
-        $user = $this->userRepository->findByEmail($data['email']);
+        $token = Auth::attempt($data);
 
-        if (!$user || !Hash::check($data['password'], $user->password)) {
+        if (!$token) {
             throw new InvalidCredentialsException();
         }
 
-        return JWTAuth::fromUser($user);
+        return $token;
     }
 }

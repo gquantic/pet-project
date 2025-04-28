@@ -32,7 +32,7 @@ return new class extends Migration {
             $table->string('telegram', 30)->nullable();
 
             $table->longText('about_self')->nullable();
-            $table->longText('promo_code');
+            $table->string('promo_code', 10);
 
             $table->foreignId('user_id')->nullable();
 

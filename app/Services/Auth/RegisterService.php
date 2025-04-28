@@ -4,7 +4,7 @@ namespace App\Services\Auth;
 
 use App\Actions\Auth\UserCreateAction;
 use App\DTOs\Auth\RegisterDTO;
-use App\Models\User\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 

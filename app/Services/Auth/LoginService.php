@@ -4,9 +4,8 @@ namespace App\Services\Auth;
 
 use App\Actions\Auth\UserLoginAction;
 use App\DTOs\Auth\LoginDTO;
-use App\Exceptions\IncorrectUserEmailOrPasswordException;
 use App\Exceptions\InvalidCredentialsException;
-use App\Models\User\User;
+use App\Models\User;
 
 class LoginService
 {
